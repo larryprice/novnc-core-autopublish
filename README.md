@@ -32,8 +32,10 @@ Run `crontab -e` from a terminal and add the following to the bottom to run your
 0 *   * * * anacron -t $HOME/.anacron/etc/anacrontab -S $HOME/.anacron/spool &> $HOME/.anacron/anacron.log
 ```
 
-Finally, to install the autopublish cronjob:
+Finally, to install autopublish as a cronjob:
 
 ``` bash
 $ install_cronjob.sh
 ```
+
+By default, this will install a weekly cronjob. If you want the job to run daily, use the `--daily` flag. If you want it to run monthly, use `--monthly`.
