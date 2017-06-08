@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Starting autopublish of novnc-core..."
+
 QUIET="0"
 for i in "$@"; do
   case $i in
@@ -57,7 +59,11 @@ if [ "$?" -ne "0" ]; then
   git push origin master
   git push origin $NOVNC_CORE_NEXT_VERSION
   npm publish
+else
+  echo "No changes detected."
 fi
 
 # cleanup
 rm -rf $AUTOPUB_WORKING_DIR
+
+echo "Finished!"
