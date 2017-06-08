@@ -11,7 +11,6 @@ $ mkdir .anacron
 $ cd .anacron/
 $ mkdir cron.daily cron.weekly cron.monthly spool etc
 $ vim etc/anacrontab
-$ cp $PROJECT/autopublish cron.daily/
 ```
 
 Inside the `$HOME/.anacron/etc/anacrontab`:
@@ -31,4 +30,10 @@ Run `crontab -e` from a terminal and add the following to the bottom to run your
 
 ``` bash
 0 *   * * * anacron -t $HOME/.anacron/etc/anacrontab -S $HOME/.anacron/spool &> $HOME/.anacron/anacron.log
+```
+
+Finally, to install the autopublish cronjob:
+
+``` bash
+$ install_cronjob.sh
 ```

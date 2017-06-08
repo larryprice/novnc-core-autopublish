@@ -60,4 +60,4 @@ if [ "$?" -ne "0" ]; then
 fi
 
 # cleanup
-rm -rf $NOVNC_DIR $NOVNC_CORE_DIR
+rm -rf $AUTOPUB_WORKING_DIR
